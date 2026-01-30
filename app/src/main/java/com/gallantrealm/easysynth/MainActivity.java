@@ -2054,29 +2054,60 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 			applySound(sound);
 			System.out.println("Loaded external file sound " + soundName);
 		} else {
-			// Try loading with category path (e.g., "instruments/Keyboards/piano")
-			sound = (Sound) clientModel.loadObject("instruments/" + soundName + ".wavesynth", true);
-			if (sound != null) {
-				applySound(sound);
-				System.out.println("Loaded categorized sound " + soundName + ".wavesynth");
-			} else {
-				sound = (Sound) clientModel.loadObject("instruments/" + soundName + ".easysynth", true);
+			// If soundName contains category (e.g., "Keyboards/piano"), try loading from user files first
+			if (soundName.contains("/")) {
+				// Try loading user-saved file with category path
+				sound = (Sound) clientModel.loadObject(soundName + ".wavesynth", true);
 				if (sound != null) {
 					applySound(sound);
-					System.out.println("Loaded categorized sound " + soundName + ".easysynth");
+					System.out.println("Loaded user saved categorized sound " + soundName + ".wavesynth");
 				} else {
-					// Try without category prefix (backwards compatibility)
-					sound = (Sound) clientModel.loadObject(soundName + ".wavesynth", true);
+					sound = (Sound) clientModel.loadObject(soundName + ".easysynth", true);
 					if (sound != null) {
 						applySound(sound);
-						System.out.println("Loaded external file sound " + soundName + ".wavesynth");
-					} else { // try internal (easysynth)
-						sound = (Sound) clientModel.loadObject(soundName + ".easysynth", true);
+						System.out.println("Loaded user saved categorized sound " + soundName + ".easysynth");
+					} else {
+						// Try from assets with instruments/ prefix
+						sound = (Sound) clientModel.loadObject("instruments/" + soundName + ".wavesynth", false);
 						if (sound != null) {
 							applySound(sound);
-							System.out.println("Loaded internal file sound " + soundName + ".easysynth");
+							System.out.println("Loaded assets categorized sound " + soundName + ".wavesynth");
 						} else {
-							System.out.println("Sound couldn't be loaded!!!");
+							sound = (Sound) clientModel.loadObject("instruments/" + soundName + ".easysynth", false);
+							if (sound != null) {
+								applySound(sound);
+								System.out.println("Loaded assets categorized sound " + soundName + ".easysynth");
+							} else {
+								System.out.println("Sound couldn't be loaded!!!");
+							}
+						}
+					}
+				}
+			} else {
+				// No category, try old loading methods
+				sound = (Sound) clientModel.loadObject("instruments/" + soundName + ".wavesynth", false);
+				if (sound != null) {
+					applySound(sound);
+					System.out.println("Loaded assets sound " + soundName + ".wavesynth");
+				} else {
+					sound = (Sound) clientModel.loadObject("instruments/" + soundName + ".easysynth", false);
+					if (sound != null) {
+						applySound(sound);
+						System.out.println("Loaded assets sound " + soundName + ".easysynth");
+					} else {
+						// Try without category prefix (backwards compatibility)
+						sound = (Sound) clientModel.loadObject(soundName + ".wavesynth", true);
+						if (sound != null) {
+							applySound(sound);
+							System.out.println("Loaded external file sound " + soundName + ".wavesynth");
+						} else { // try internal (easysynth)
+							sound = (Sound) clientModel.loadObject(soundName + ".easysynth", true);
+							if (sound != null) {
+								applySound(sound);
+								System.out.println("Loaded internal file sound " + soundName + ".easysynth");
+							} else {
+								System.out.println("Sound couldn't be loaded!!!");
+							}
 						}
 					}
 				}
