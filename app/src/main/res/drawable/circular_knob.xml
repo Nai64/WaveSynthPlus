@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <layer-list>
+            <!-- Shadow -->
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="#40000000"/>
+                    <size android:width="48dp" android:height="48dp"/>
+                </shape>
+            </item>
+            <!-- Outer ring -->
+            <item android:top="2dp" android:left="2dp" android:right="2dp" android:bottom="4dp">
+                <shape android:shape="oval">
+                    <solid android:color="#4CAF50"/>
+                    <size android:width="44dp" android:height="44dp"/>
+                </shape>
+            </item>
+            <!-- Inner circle -->
+            <item android:top="5dp" android:left="5dp" android:right="5dp" android:bottom="7dp">
+                <shape android:shape="oval">
+                    <gradient
+                        android:angle="135"
+                        android:startColor="#555555"
+                        android:endColor="#333333"/>
+                </shape>
+            </item>
+            <!-- Center indicator line -->
+            <item android:top="18dp" android:left="20dp" android:right="20dp" android:bottom="25dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="#FFFFFF"/>
+                    <corners android:radius="2dp"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item>
+        <layer-list>
+            <!-- Shadow -->
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="#40000000"/>
+                    <size android:width="48dp" android:height="48dp"/>
+                </shape>
+            </item>
+            <!-- Outer ring -->
+            <item android:top="2dp" android:left="2dp" android:right="2dp" android:bottom="4dp">
+                <shape android:shape="oval">
+                    <solid android:color="#666666"/>
+                    <size android:width="44dp" android:height="44dp"/>
+                </shape>
+            </item>
+            <!-- Inner circle -->
+            <item android:top="5dp" android:left="5dp" android:right="5dp" android:bottom="7dp">
+                <shape android:shape="oval">
+                    <gradient
+                        android:angle="135"
+                        android:startColor="#666666"
+                        android:endColor="#444444"/>
+                </shape>
+            </item>
+            <!-- Center indicator line -->
+            <item android:top="18dp" android:left="20dp" android:right="20dp" android:bottom="25dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="#FFFFFF"/>
+                    <corners android:radius="2dp"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

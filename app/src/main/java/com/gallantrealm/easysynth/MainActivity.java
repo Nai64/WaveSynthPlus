@@ -1973,24 +1973,39 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 						sound.author = author;
 					}
 					String fullPath = category + "/" + soundName;
-					clientModel.saveObject(sound, fullPath + ".wavesynth", true);
-					dirty = false;
 					
-					// Update the spinner and select the newly saved sound
-					updateSoundSpinner();
-					int newSoundPosition = -1;
-					for (int i = 0; i < soundSpinner.getCount(); i++) {
-						if (fullPath.equals(soundSpinner.getItemAtPosition(i))) {
-							newSoundPosition = i;
-							break;
+					// Create category directory if it doesn't exist
+					try {
+						java.io.File categoryDir = new java.io.File(getFilesDir(), category);
+						if (!categoryDir.exists()) {
+							categoryDir.mkdirs();
 						}
-					}
-					if (newSoundPosition >= 0) {
-						soundSpinner.setSelection(newSoundPosition);
+					} catch (Exception e) {
+						e.printStackTrace();
 					}
 					
-					Toast.makeText(MainActivity.this, "Sound saved to " + fullPath, Toast.LENGTH_SHORT).show();
-					saveDialog.dismiss();
+					java.io.File savedFile = clientModel.saveObject(sound, fullPath + ".wavesynth", true);
+					if (savedFile != null) {
+						dirty = false;
+						
+						// Update the spinner and select the newly saved sound
+						updateSoundSpinner();
+						int newSoundPosition = -1;
+						for (int i = 0; i < soundSpinner.getCount(); i++) {
+							if (fullPath.equals(soundSpinner.getItemAtPosition(i))) {
+								newSoundPosition = i;
+								break;
+							}
+						}
+						if (newSoundPosition >= 0) {
+							soundSpinner.setSelection(newSoundPosition);
+						}
+						
+						Toast.makeText(MainActivity.this, "Sound saved to " + fullPath, Toast.LENGTH_SHORT).show();
+						saveDialog.dismiss();
+					} else {
+						Toast.makeText(MainActivity.this, "Failed to save sound", Toast.LENGTH_SHORT).show();
+					}
 				} else {
 					Toast.makeText(MainActivity.this, "Please enter a sound name", Toast.LENGTH_SHORT).show();
 				}
