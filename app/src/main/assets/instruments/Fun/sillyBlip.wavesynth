@@ -1,0 +1,13 @@
+{
+  "name": "Silly Blip",
+  "volume": 0.7,
+  "attack": 0.001,
+  "decay": 0.05,
+  "sustain": 0.3,
+  "release": 0.05,
+  "waveform": "sine",
+  "pitchEnvelopeAmount": 0.4,
+  "pitchEnvelopeDecay": 0.08,
+  "vibratoRate": 8.0,
+  "vibratoAmount": 0.3
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Digital Screech",
+  "volume": 0.75,
+  "attack": 0.0,
+  "decay": 0.0,
+  "sustain": 1.0,
+  "release": 0.01,
+  "distortionAmount": 0.9,
+  "bitCrushAmount": 1.0,
+  "whiteNoiseAmount": 1.0,
+  "filterCutoff": 0.95,
+  "filterResonance": 0.8
+}

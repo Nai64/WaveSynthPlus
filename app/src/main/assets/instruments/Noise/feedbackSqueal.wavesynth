@@ -1,0 +1,14 @@
+{
+  "name": "Feedback Squeal",
+  "volume": 0.65,
+  "attack": 0.0,
+  "decay": 0.0,
+  "sustain": 1.0,
+  "release": 0.02,
+  "distortionAmount": 0.95,
+  "bitCrushAmount": 0.6,
+  "whiteNoiseAmount": 1.0,
+  "pinkNoiseAmount": 0.7,
+  "filterCutoff": 0.98,
+  "filterResonance": 0.95
+}

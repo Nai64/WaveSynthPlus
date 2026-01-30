@@ -1,0 +1,15 @@
+{
+  "name": "Ice Crystal",
+  "volume": 0.55,
+  "attack": 1.0,
+  "decay": 0.5,
+  "sustain": 0.8,
+  "release": 2.0,
+  "waveform": "sine",
+  "waveform2": "triangle",
+  "detune": 0.2,
+  "vibratoRate": 6.0,
+  "vibratoAmount": 0.3,
+  "filterCutoff": 0.9,
+  "filterResonance": 0.4
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Glitchy Voice",
+  "volume": 0.7,
+  "attack": 0.005,
+  "decay": 0.15,
+  "sustain": 0.5,
+  "release": 0.1,
+  "waveform": "sawtooth",
+  "bitCrushAmount": 0.8,
+  "distortionAmount": 0.4,
+  "filterCutoff": 0.6,
+  "filterResonance": 0.7,
+  "lfoRate": 12.0,
+  "lfoAmount": 0.5
+}

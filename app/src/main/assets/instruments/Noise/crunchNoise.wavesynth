@@ -1,0 +1,14 @@
+{
+  "name": "Crunch Noise",
+  "volume": 0.7,
+  "attack": 0.01,
+  "decay": 0.0,
+  "sustain": 1.0,
+  "release": 0.02,
+  "distortionAmount": 0.8,
+  "bitCrushAmount": 0.95,
+  "whiteNoiseAmount": 1.0,
+  "staticNoiseAmount": 0.6,
+  "filterCutoff": 0.7,
+  "filterResonance": 0.3
+}

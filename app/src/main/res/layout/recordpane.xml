@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/recordPane" android:layout_width="200dp" android:layout_height="match_parent"
+	android:orientation="vertical" android:visibility="gone">
+	<TableLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:shrinkColumns="0" android:stretchColumns="1">
+		<TableRow android:id="@+id/TableRow26" android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_weight="1">
+			<TextView android:id="@+id/TextView25" android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_marginTop="5dp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2"
+				android:shadowRadius="1" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="14sp" />
+		</TableRow>
+		<TableRow android:id="@+id/TableRow13" android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_weight="1">
+			<TextView android:id="@+id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text=" " android:textAppearance="?android:attr/textAppearanceMedium" />
+			<TextView android:id="@+id/recordTime" android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:gravity="center" android:text="0:00" android:textAppearance="?android:attr/textAppearanceLarge"
+				android:textSize="40sp" />
+		</TableRow>
+		<TableRow android:id="@+id/TableRow15" android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_weight="1">
+			<TextView android:id="@+id/TextView26" android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_marginTop="5dp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2"
+				android:shadowRadius="1" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="14sp" />
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+				<Button android:id="@+id/recordStartButton" style="?android:attr/buttonStyleSmall" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:layout_weight="1" android:text="Record" />
+				<Button android:id="@+id/recordStopButton" style="?android:attr/buttonStyleSmall" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:layout_weight="1" android:text="Stop" />
+				<Button android:id="@+id/recordPlayButton" style="?android:attr/buttonStyleSmall" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:layout_weight="1" android:text="Replay" />
+				<Button android:id="@+id/recordSaveButton" style="?android:attr/buttonStyleSmall" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:layout_weight="1" android:text="Save" />
+			</LinearLayout>
+		</TableRow>
+		<TableRow android:id="@+id/TableRow30" android:layout_width="wrap_content" android:layout_height="wrap_content"
+			android:layout_weight="1">
+			<TextView android:id="@+id/TextView24" android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_marginTop="5dp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2"
+				android:shadowRadius="1" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="14sp" />
+		</TableRow>
+	</TableLayout>
+</LinearLayout>
+

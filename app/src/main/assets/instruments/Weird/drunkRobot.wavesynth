@@ -1,0 +1,16 @@
+{
+  "name": "Drunk Robot",
+  "volume": 0.65,
+  "attack": 0.02,
+  "decay": 0.2,
+  "sustain": 0.5,
+  "release": 0.2,
+  "waveform": "square",
+  "bitCrushAmount": 0.75,
+  "pitchEnvelopeAmount": 0.3,
+  "pitchEnvelopeDecay": 0.25,
+  "lfoRate": 4.0,
+  "lfoAmount": 0.7,
+  "filterCutoff": 0.65,
+  "filterResonance": 0.5
+}

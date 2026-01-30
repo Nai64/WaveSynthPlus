@@ -1,0 +1,14 @@
+{
+  "name": "Dark Atmosphere",
+  "volume": 0.55,
+  "attack": 1.2,
+  "decay": 0.5,
+  "sustain": 0.8,
+  "release": 2.0,
+  "waveform": "sawtooth",
+  "waveform2": "square",
+  "detune": 0.12,
+  "filterCutoff": 0.4,
+  "filterResonance": 0.3,
+  "chorusAmount": 0.4
+}

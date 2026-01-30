@@ -1,0 +1,13 @@
+{
+  "name": "Laser Zap",
+  "volume": 0.7,
+  "attack": 0.001,
+  "decay": 0.2,
+  "sustain": 0.0,
+  "release": 0.15,
+  "waveform": "sawtooth",
+  "pitchEnvelopeAmount": -0.9,
+  "pitchEnvelopeDecay": 0.18,
+  "filterCutoff": 0.9,
+  "filterResonance": 0.5
+}

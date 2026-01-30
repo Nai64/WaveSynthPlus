@@ -1,0 +1,15 @@
+{
+  "name": "Haunted Music Box",
+  "volume": 0.6,
+  "attack": 0.01,
+  "decay": 0.4,
+  "sustain": 0.3,
+  "release": 0.6,
+  "waveform": "sine",
+  "bitCrushAmount": 0.5,
+  "detune": 0.2,
+  "vibratoRate": 2.0,
+  "vibratoAmount": 0.4,
+  "filterCutoff": 0.6,
+  "filterResonance": 0.3
+}

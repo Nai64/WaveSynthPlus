@@ -1,0 +1,14 @@
+{
+  "name": "Digital Artifact",
+  "volume": 0.7,
+  "attack": 0.001,
+  "decay": 0.2,
+  "sustain": 0.4,
+  "release": 0.15,
+  "waveform": "square",
+  "bitCrushAmount": 0.9,
+  "whiteNoiseAmount": 0.3,
+  "staticNoiseAmount": 0.5,
+  "filterCutoff": 0.85,
+  "filterResonance": 0.5
+}

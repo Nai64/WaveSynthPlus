@@ -1,0 +1,15 @@
+{
+  "name": "Alien Transmission",
+  "volume": 0.6,
+  "attack": 0.2,
+  "decay": 0.3,
+  "sustain": 0.6,
+  "release": 0.5,
+  "waveform": "sine",
+  "waveform2": "square",
+  "detune": 0.5,
+  "vibratoRate": 9.0,
+  "vibratoAmount": 0.6,
+  "filterCutoff": 0.7,
+  "filterResonance": 0.6
+}

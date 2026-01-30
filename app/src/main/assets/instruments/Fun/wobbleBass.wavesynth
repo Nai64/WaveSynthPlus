@@ -1,0 +1,13 @@
+{
+  "name": "Wobble Bass",
+  "volume": 0.75,
+  "attack": 0.01,
+  "decay": 0.1,
+  "sustain": 0.8,
+  "release": 0.1,
+  "waveform": "sawtooth",
+  "filterCutoff": 0.4,
+  "filterResonance": 0.8,
+  "lfoRate": 3.0,
+  "lfoAmount": 0.7
+}

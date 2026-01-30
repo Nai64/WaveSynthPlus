@@ -1,0 +1,13 @@
+{
+  "name": "Bubble Pop",
+  "volume": 0.6,
+  "attack": 0.001,
+  "decay": 0.1,
+  "sustain": 0.0,
+  "release": 0.08,
+  "waveform": "sine",
+  "pitchEnvelopeAmount": 0.6,
+  "pitchEnvelopeDecay": 0.12,
+  "filterCutoff": 0.75,
+  "filterResonance": 0.25
+}

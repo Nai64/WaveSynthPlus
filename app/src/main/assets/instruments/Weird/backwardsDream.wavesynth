@@ -1,0 +1,15 @@
+{
+  "name": "Backwards Dream",
+  "volume": 0.65,
+  "attack": 0.001,
+  "decay": 0.5,
+  "sustain": 0.8,
+  "release": 1.5,
+  "waveform": "sawtooth",
+  "waveform2": "triangle",
+  "detune": 0.15,
+  "chorusAmount": 0.6,
+  "reverbAmount": 0.7,
+  "filterCutoff": 0.7,
+  "filterResonance": 0.35
+}

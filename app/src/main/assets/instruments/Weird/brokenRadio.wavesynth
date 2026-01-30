@@ -1,0 +1,15 @@
+{
+  "name": "Broken Radio",
+  "volume": 0.65,
+  "attack": 0.01,
+  "decay": 0.1,
+  "sustain": 0.7,
+  "release": 0.2,
+  "waveform": "square",
+  "bitCrushAmount": 0.7,
+  "whiteNoiseAmount": 0.4,
+  "lfoRate": 7.0,
+  "lfoAmount": 0.6,
+  "filterCutoff": 0.5,
+  "filterResonance": 0.5
+}

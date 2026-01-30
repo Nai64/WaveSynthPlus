@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-feature android:name="android.hardware.audio.output"
+        android:required="true" />
+    <uses-feature android:name="android.hardware.audio.low_latency"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.audio.pro"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.usb.host"
+        android:required="false" />
+    <uses-feature android:name="android.software.midi"
+        android:required="false" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        tools:targetApi="33">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:alwaysRetainTaskState="true"
+            android:screenOrientation="sensorLandscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+                <action android:name="android.intent.action.PICK" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- <data android:host="*" android:mimeType="*/*" android:pathPattern=".*\\.easysynth"  android:scheme="file" />  -->
+                <data android:host="*" android:mimeType="application/octet-stream" android:scheme="content" />
+            </intent-filter>
+        </activity>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.gallantrealm.easysynth.fileprovider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+        <provider android:name="com.gallantrealm.easysynth.SoundContentProvider"
+            android:authorities="com.gallantrealm.easysynth" android:exported="true"
+            android:grantUriPermissions="true">
+        </provider>
+    </application>
+
+</manifest>

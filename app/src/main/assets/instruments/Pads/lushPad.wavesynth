@@ -1,0 +1,15 @@
+{
+  "name": "Lush Pad",
+  "volume": 0.6,
+  "attack": 0.7,
+  "decay": 0.3,
+  "sustain": 0.9,
+  "release": 1.5,
+  "waveform": "sawtooth",
+  "waveform2": "sine",
+  "detune": 0.1,
+  "chorusAmount": 0.5,
+  "reverbAmount": 0.4,
+  "filterCutoff": 0.65,
+  "filterResonance": 0.2
+}

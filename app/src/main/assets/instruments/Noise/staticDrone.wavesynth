@@ -1,0 +1,15 @@
+{
+  "name": "Static Drone",
+  "volume": 0.6,
+  "attack": 0.05,
+  "decay": 0.1,
+  "sustain": 0.9,
+  "release": 0.1,
+  "distortionAmount": 0.5,
+  "bitCrushAmount": 0.7,
+  "whiteNoiseAmount": 1.0,
+  "staticNoiseAmount": 0.9,
+  "brownNoiseAmount": 0.4,
+  "filterCutoff": 0.5,
+  "filterResonance": 0.5
+}

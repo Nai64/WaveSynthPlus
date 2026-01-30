@@ -1,0 +1,14 @@
+{
+  "name": "Telephone Hell",
+  "volume": 0.7,
+  "attack": 0.01,
+  "decay": 0.1,
+  "sustain": 0.7,
+  "release": 0.15,
+  "waveform": "sine",
+  "distortionAmount": 0.6,
+  "bitCrushAmount": 0.7,
+  "filterCutoff": 0.4,
+  "filterResonance": 0.8,
+  "whiteNoiseAmount": 0.2
+}

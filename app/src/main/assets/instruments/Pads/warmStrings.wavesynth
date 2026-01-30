@@ -1,0 +1,15 @@
+{
+  "name": "Warm Strings",
+  "volume": 0.65,
+  "attack": 0.5,
+  "decay": 0.2,
+  "sustain": 0.9,
+  "release": 1.0,
+  "waveform": "sawtooth",
+  "waveform2": "triangle",
+  "detune": 0.08,
+  "vibratoRate": 4.0,
+  "vibratoAmount": 0.2,
+  "filterCutoff": 0.6,
+  "filterResonance": 0.25
+}

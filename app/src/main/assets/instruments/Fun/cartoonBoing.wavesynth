@@ -1,0 +1,13 @@
+{
+  "name": "Cartoon Boing",
+  "volume": 0.75,
+  "attack": 0.001,
+  "decay": 0.3,
+  "sustain": 0.0,
+  "release": 0.2,
+  "waveform": "square",
+  "pitchEnvelopeAmount": 0.8,
+  "pitchEnvelopeDecay": 0.25,
+  "filterCutoff": 0.9,
+  "filterResonance": 0.5
+}

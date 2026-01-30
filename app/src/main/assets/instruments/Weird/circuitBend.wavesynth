@@ -1,0 +1,15 @@
+{
+  "name": "Circuit Bend",
+  "volume": 0.7,
+  "attack": 0.005,
+  "decay": 0.1,
+  "sustain": 0.6,
+  "release": 0.1,
+  "waveform": "square",
+  "waveform2": "square",
+  "detune": 0.8,
+  "bitCrushAmount": 0.85,
+  "distortionAmount": 0.5,
+  "filterCutoff": 0.75,
+  "filterResonance": 0.6
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">WaveSynthPlus</string>
+	<string name="appTagline">Wavetable Synthesizer</string>
+	<string name="mainMenuClassName">com.gallantrealm.easysynth.MainActivity</string>
+	<string name="admobid">a1520579fb15c66</string>
+	<string name="amazonappkey">253bef4553bc441f837dacf6dbb92d1b</string>
+	<string name="usedSounds">piano,guitar,musicbox</string>
+	<string name="googleappkey">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuzj/DiVsNvAAbZysTqWjYWqO7BzBgh7TlPqhH5j7lkuA+A0augjXTCM1W2ZN2geQb3ZWRwgZ0KKjX7EFzV4fbApG23zoZiMu9FqC5JzvVwErPpcUi3A96iFCf97SdYA62iEHpNFXzLNvcD3ziLpfAckq9ad40Dx2FS2fuvthJSsv7KeuUOvKhmQ5R4EFddQH6SGSUI7jB4QsUYImH92QQCtg52FaJ2jNas4Hd91/tDvvTGDTnNMWCoG1w9pTlpsZ/UvnRepghPCi72HMVMfYgRkMbutwWoBjimFOgR2pcXU6L8DlkhrLroTuR06Ps4miDAwzuBP6wBDpKk2cfCN54wIDAQAB</string>
+	<string name="defaultWorldName">com.gallantrealm.mysynth.DemoWorld</string>
+	<string name="defaultAvatarName">user1</string>
+	<string name="fullVersion">false</string>
+</resources>

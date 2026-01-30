@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@raw/onyx_background"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/buttonPane"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/soundButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_button"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="1"
+                android:text="Sound"
+                android:textColor="#c0ffffff"
+                android:textSize="13sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/harmonicsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_button"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="1"
+                android:text="Harmonics"
+                android:textColor="#c0ffffff"
+                android:textSize="13sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/filterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_button"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="1"
+                android:text="Filter"
+                android:textColor="#c0ffffff"
+                android:textSize="13sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/ampButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_button"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="1"
+                android:text="Amp"
+                android:textColor="#c0ffffff"
+                android:textSize="13sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/vibratoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_button"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="1"
+                android:text="Mod"
+                android:textColor="#c0ffffff"
+                android:textSize="13sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/vibrato2Button"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_button"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="1"
+                android:text="Mod2"
+                android:textColor="#c0ffffff"
+                android:textSize="13sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/effectsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_button"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="1"
+                android:text="Echo"
+                android:textColor="#c0ffffff"
+                android:textSize="13sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/newEffectsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_button"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="1"
+                android:text="Effects"
+                android:textColor="#c0ffffff"
+                android:textSize="13sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/sequencerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_button"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="1"
+                android:text="Sequencer"
+                android:textColor="#c0ffffff"
+                android:textSize="13sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/recordButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:background="@drawable/tab_button"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="1"
+                android:text="Record"
+                android:textColor="#c0ffffff"
+                android:textSize="13sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="29dp"
+            android:layout_height="29dp"
+            android:background="@drawable/gear"
+            android:text="    " />
+
+        <Button
+            android:id="@+id/buyButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="1dp"
+            android:text="Buy" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_weight="1"
+        android:paddingBottom="5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp" >
+
+        <include
+            android:id="@+id/vibrato2Pane"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            layout="@layout/modpane" />
+
+        <include
+            android:id="@+id/soundPane"
+            android:layout_width="220dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            layout="@layout/soundpane" />
+
+        <include
+            android:id="@+id/harmonicsPane"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            layout="@layout/harmonicspane" />
+
+        <include
+            android:id="@+id/filterPane"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            layout="@layout/filterpane" />
+
+        <include
+            android:id="@+id/ampPane"
+            android:layout_width="200dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            layout="@layout/amppane" />
+
+        <include
+            android:id="@+id/vibratoPane"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            layout="@layout/modpane" />
+
+        <include
+            android:id="@+id/effectsPane"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            layout="@layout/echopane" />
+
+        <include
+            android:id="@+id/newEffectsPane"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            layout="@layout/neweffectspane" />
+
+        <include
+            android:id="@+id/sequencerPane"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            layout="@layout/newsequencerpane" />
+
+        <include
+            android:id="@+id/recordPane"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            layout="@layout/recordpane" />
+    </LinearLayout>
+
+    <include
+        android:id="@+id/keyboardPane"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="2"
+        layout="@layout/keyboardpane" />
+
+</LinearLayout>

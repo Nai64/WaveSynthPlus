@@ -1,0 +1,15 @@
+{
+  "name": "Soft Synth",
+  "volume": 0.7,
+  "attack": 0.4,
+  "decay": 0.2,
+  "sustain": 0.9,
+  "release": 0.8,
+  "waveform": "triangle",
+  "waveform2": "triangle",
+  "detune": 0.04,
+  "vibratoRate": 3.0,
+  "vibratoAmount": 0.1,
+  "filterCutoff": 0.7,
+  "filterResonance": 0.15
+}

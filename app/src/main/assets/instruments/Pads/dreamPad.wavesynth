@@ -1,0 +1,15 @@
+{
+  "name": "Dream Pad",
+  "volume": 0.6,
+  "attack": 0.8,
+  "decay": 0.3,
+  "sustain": 0.85,
+  "release": 1.5,
+  "waveform": "sine",
+  "waveform2": "triangle",
+  "detune": 0.05,
+  "vibratoRate": 3.5,
+  "vibratoAmount": 0.15,
+  "filterCutoff": 0.65,
+  "filterResonance": 0.2
+}

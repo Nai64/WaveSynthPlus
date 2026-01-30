@@ -1,0 +1,13 @@
+{
+  "name": "Bouncy Ball",
+  "volume": 0.7,
+  "attack": 0.001,
+  "decay": 0.2,
+  "sustain": 0.0,
+  "release": 0.1,
+  "waveform": "sine",
+  "pitchEnvelopeAmount": 0.5,
+  "pitchEnvelopeDecay": 0.15,
+  "filterCutoff": 0.8,
+  "filterResonance": 0.3
+}

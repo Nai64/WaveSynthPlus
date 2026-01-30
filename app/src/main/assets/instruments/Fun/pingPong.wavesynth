@@ -1,0 +1,13 @@
+{
+  "name": "Ping Pong",
+  "volume": 0.7,
+  "attack": 0.001,
+  "decay": 0.12,
+  "sustain": 0.0,
+  "release": 0.1,
+  "waveform": "sine",
+  "pitchEnvelopeAmount": 0.5,
+  "pitchEnvelopeDecay": 0.1,
+  "filterCutoff": 0.85,
+  "filterResonance": 0.3
+}

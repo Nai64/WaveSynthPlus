@@ -1,0 +1,15 @@
+{
+  "name": "Bright Sweep",
+  "volume": 0.65,
+  "attack": 0.6,
+  "decay": 0.3,
+  "sustain": 0.85,
+  "release": 1.2,
+  "waveform": "triangle",
+  "waveform2": "sine",
+  "detune": 0.06,
+  "filterCutoff": 0.8,
+  "filterResonance": 0.3,
+  "lfoRate": 0.5,
+  "lfoAmount": 0.3
+}

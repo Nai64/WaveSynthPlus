@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <!-- Selection indicator -->
+    <View
+        android:id="@+id/selectionIndicator"
+        android:layout_width="4dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="8dp"
+        android:background="#00FF00"
+        android:visibility="gone"/>
+
+    <!-- Instrument name on left -->
+    <TextView
+        android:id="@+id/instrumentName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:text="Instrument Name"/>
+
+    <!-- Metadata container on right -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="end"
+        android:layout_marginLeft="8dp">
+
+        <TextView
+            android:id="@+id/instrumentType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="#AAAAAA"
+            android:gravity="end"
+            android:text="WaveSynth"/>
+
+        <TextView
+            android:id="@+id/instrumentSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="#888888"
+            android:gravity="end"
+            android:text="1.2 KB"/>
+
+        <TextView
+            android:id="@+id/instrumentAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="9sp"
+            android:textColor="#777777"
+            android:gravity="end"
+            android:text=""/>
+
+    </LinearLayout>
+
+</LinearLayout>

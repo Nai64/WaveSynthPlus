@@ -1,0 +1,15 @@
+{
+  "name": "Time Stretch",
+  "volume": 0.65,
+  "attack": 0.3,
+  "decay": 0.5,
+  "sustain": 0.7,
+  "release": 0.8,
+  "waveform": "triangle",
+  "waveform2": "sawtooth",
+  "detune": 0.3,
+  "lfoRate": 0.3,
+  "lfoAmount": 0.8,
+  "filterCutoff": 0.5,
+  "filterResonance": 0.4
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Squeaky Toy",
+  "volume": 0.65,
+  "attack": 0.005,
+  "decay": 0.1,
+  "sustain": 0.4,
+  "release": 0.08,
+  "waveform": "square",
+  "filterCutoff": 0.8,
+  "filterResonance": 0.7,
+  "vibratoRate": 5.0,
+  "vibratoAmount": 0.2
+}

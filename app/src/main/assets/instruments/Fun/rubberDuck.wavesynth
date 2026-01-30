@@ -1,0 +1,12 @@
+{
+  "name": "Rubber Duck",
+  "volume": 0.65,
+  "attack": 0.01,
+  "decay": 0.15,
+  "sustain": 0.2,
+  "release": 0.1,
+  "waveform": "square",
+  "pitchEnvelopeAmount": 0.3,
+  "filterCutoff": 0.6,
+  "filterResonance": 0.6
+}

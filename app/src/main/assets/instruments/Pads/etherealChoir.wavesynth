@@ -1,0 +1,15 @@
+{
+  "name": "Ethereal Choir",
+  "volume": 0.6,
+  "attack": 0.9,
+  "decay": 0.4,
+  "sustain": 0.9,
+  "release": 1.8,
+  "waveform": "sine",
+  "waveform2": "sine",
+  "detune": 0.15,
+  "vibratoRate": 5.0,
+  "vibratoAmount": 0.25,
+  "filterCutoff": 0.7,
+  "filterResonance": 0.2
+}

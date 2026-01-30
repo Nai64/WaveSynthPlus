@@ -1,0 +1,13 @@
+{
+  "name": "Sproing",
+  "volume": 0.75,
+  "attack": 0.001,
+  "decay": 0.4,
+  "sustain": 0.0,
+  "release": 0.3,
+  "waveform": "triangle",
+  "pitchEnvelopeAmount": 1.0,
+  "pitchEnvelopeDecay": 0.35,
+  "filterCutoff": 0.85,
+  "filterResonance": 0.4
+}

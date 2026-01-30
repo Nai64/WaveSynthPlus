@@ -1,0 +1,13 @@
+{
+  "name": "Brown Rumble",
+  "volume": 0.7,
+  "attack": 0.02,
+  "decay": 0.0,
+  "sustain": 1.0,
+  "release": 0.1,
+  "distortionAmount": 0.4,
+  "bitCrushAmount": 0.0,
+  "brownNoiseAmount": 1.0,
+  "filterCutoff": 0.4,
+  "filterResonance": 0.3
+}
