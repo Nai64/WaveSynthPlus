@@ -1,7 +1,7 @@
-# WaveSynth Plus
+# WaveSynthPlus
 
 <p align="center">
-  <img src="Store/play_store_512.png" alt="WaveSynth Plus Icon" width="200"/>
+  <img src="Icon.png" alt="WaveSynthPlus Icon" width="200"/>
 </p>
 
 <p align="center">
@@ -94,12 +94,9 @@ WaveSynthPlus is a modernized fork of WaveSynth (formerly EasySynth), featuring 
 |---------|--------|-------|
 | **UI Style** | Android 1.0 legacy UI | Material Design 3 |
 | **Drawables** | PNG 9-patches | Vector drawables (XML) |
-| **Sliders** | Basic thumb | FL Studio circular knobs |
 | **Piano Keys** | Static states | 3D depth + animations |
 | **Buttons** | Flat design | Gradient with elevation |
 | **Save Dialog** | Basic layout | Scrollable with categories |
-| **Author Field** | ❌ Not available | ✅ Supported |
-| **Code Quality** | Duplicate packages | Clean, optimized |
 
 ## 🛠️ Technologies
 
