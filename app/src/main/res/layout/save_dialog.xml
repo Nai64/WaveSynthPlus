@@ -5,8 +5,7 @@
     android:fillViewport="true">
 <FrameLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#DD000000">
+    android:layout_height="wrap_content">
 <LinearLayout
     android:layout_width="350dp"
     android:layout_height="wrap_content"
