@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/sequencerPane" android:layout_width="wrap_content" android:layout_height="fill_parent"
+	android:orientation="vertical" android:visibility="visible" xmlns:android="http://schemas.android.com/apk/res/android">
+	<HorizontalScrollView android:id="@+id/horizontalScrollView2" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:layout_weight="1">
+		<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+			android:orientation="horizontal">
+			<TableLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
+				android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_weight="1">
+				<TableRow android:id="@+id/TableRow17" android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:layout_weight="1">
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence1"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence2"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence3"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence4"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence5"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence6"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence7"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence8"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence9"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence10"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence11"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence12"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence13"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence14"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence15"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence16"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
+					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequenceRate"
+						android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="10dp"
+						android:layout_marginRight="10dp" android:max="100" android:progressDrawable="@drawable/progress_horizontal"
+						android:thumb="@drawable/seek_thumb" />
+					<CheckBox android:id="@+id/sequenceLoopCheckBox" android:layout_width="wrap_content" android:textSize="14sp"
+						android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:text="Loop" android:button="@drawable/btn_check"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+				</TableRow>
+				<TableRow android:id="@+id/TableRow16" android:layout_width="wrap_content" android:layout_height="wrap_content">
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="1" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="2" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="3" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="4" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="5" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="6" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="7" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal|center_vertical"
+						android:text="8" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="9" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="10" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="11" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="12" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="13" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="14" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="15" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal|center_vertical"
+						android:text="16" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+						android:text="Rate" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
+				</TableRow>
+			</TableLayout>
+		</LinearLayout>
+	</HorizontalScrollView>
+</LinearLayout>
+

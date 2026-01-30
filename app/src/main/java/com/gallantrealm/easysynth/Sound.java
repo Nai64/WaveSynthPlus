@@ -78,9 +78,12 @@ public class Sound implements Serializable {
 	float compressorAmount;
 
 	int[] sequence;
+	int[] sequenceVelocity; // Per-step velocity (0-100)
+	boolean[] sequenceMute; // Per-step mute flag
 	float sequenceRate;
 	boolean sequenceLoop;
 	boolean bpmSequenceRate;
+	int currentSequenceStep; // For visual feedback
 
 	float ampVolume;
 	
@@ -179,9 +182,38 @@ public class Sound implements Serializable {
 		} else {
 			sound.sequence = new int[8];
 		}
+		
+		// Sequence velocity (per-step)
+		JSONArray sequenceVelocityArray = json.optJSONArray("sequenceVelocity");
+		if (sequenceVelocityArray != null) {
+			sound.sequenceVelocity = new int[sequenceVelocityArray.length()];
+			for (int i = 0; i < sequenceVelocityArray.length(); i++) {
+				sound.sequenceVelocity[i] = sequenceVelocityArray.optInt(i, 100);
+			}
+		} else {
+			// Initialize with default velocity (100)
+			sound.sequenceVelocity = new int[sound.sequence.length];
+			for (int i = 0; i < sound.sequenceVelocity.length; i++) {
+				sound.sequenceVelocity[i] = 100;
+			}
+		}
+		
+		// Sequence mute (per-step)
+		JSONArray sequenceMuteArray = json.optJSONArray("sequenceMute");
+		if (sequenceMuteArray != null) {
+			sound.sequenceMute = new boolean[sequenceMuteArray.length()];
+			for (int i = 0; i < sequenceMuteArray.length(); i++) {
+				sound.sequenceMute[i] = sequenceMuteArray.optBoolean(i, false);
+			}
+		} else {
+			// Initialize all unmuted
+			sound.sequenceMute = new boolean[sound.sequence.length];
+		}
+		
 		sound.sequenceRate = (float) json.optDouble("sequenceRate", 0.0);
 		sound.sequenceLoop = json.optBoolean("sequenceLoop", false);
 		sound.bpmSequenceRate = json.optBoolean("bpmSequenceRate", true);
+		sound.currentSequenceStep = -1;
 		
 		// Metadata
 		sound.author = json.optString("author", null);
@@ -278,6 +310,25 @@ public class Sound implements Serializable {
 			}
 		}
 		json.put("sequence", sequenceArray);
+		
+		// Sequence velocity
+		JSONArray sequenceVelocityArray = new JSONArray();
+		if (sequenceVelocity != null) {
+			for (int v : sequenceVelocity) {
+				sequenceVelocityArray.put(v);
+			}
+		}
+		json.put("sequenceVelocity", sequenceVelocityArray);
+		
+		// Sequence mute
+		JSONArray sequenceMuteArray = new JSONArray();
+		if (sequenceMute != null) {
+			for (boolean m : sequenceMute) {
+				sequenceMuteArray.put(m);
+			}
+		}
+		json.put("sequenceMute", sequenceMuteArray);
+		
 		json.put("sequenceRate", sequenceRate);
 		json.put("sequenceLoop", sequenceLoop);
 		json.put("bpmSequenceRate", bpmSequenceRate);

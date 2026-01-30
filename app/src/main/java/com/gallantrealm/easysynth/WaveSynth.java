@@ -130,6 +130,9 @@ public class WaveSynth extends AbstractInstrument {
 
 	public static final int SEQUENCE_LENGTH = 16;
 	protected int[] sequence = new int[SEQUENCE_LENGTH];
+	protected int[] sequenceVelocity = new int[SEQUENCE_LENGTH];
+	protected boolean[] sequenceMute = new boolean[SEQUENCE_LENGTH];
+	protected int currentSequenceStep = -1;
 	protected float sequenceRate;
 	protected boolean sequenceLoop;
 	protected int sequencerBaseNote;
@@ -585,6 +588,9 @@ public class WaveSynth extends AbstractInstrument {
 		sound.limiterAmount = limiterAmount;
 		sound.compressorAmount = compressorAmount;
 		sound.sequence = sequence;
+		sound.sequenceVelocity = sequenceVelocity;
+		sound.sequenceMute = sequenceMute;
+		sound.currentSequenceStep = currentSequenceStep;
 		sound.sequenceRate = sequenceRate;
 		sound.bpmSequenceRate = true;
 		sound.sequenceLoop = sequenceLoop;
@@ -699,6 +705,9 @@ public class WaveSynth extends AbstractInstrument {
 		limiterAmount = sound.limiterAmount;
 		compressorAmount = sound.compressorAmount;
 		sequence = sound.sequence;
+		sequenceVelocity = sound.sequenceVelocity;
+		sequenceMute = sound.sequenceMute;
+		currentSequenceStep = sound.currentSequenceStep;
 		sequenceRate = sound.sequenceRate;
 		if (!sound.bpmSequenceRate) {
 			sequenceRate *= 6;
@@ -1323,17 +1332,33 @@ public class WaveSynth extends AbstractInstrument {
 					sequenceIndex = sequenceIndex - SEQUENCE_LENGTH;
 				}
 				if ((int) lastSequenceIndex != (int) sequenceIndex) {
-					sequenceNote = sequence[(int) sequenceIndex];
-					if (sequenceNote != 0) {
+					int currentStep = (int) sequenceIndex;
+					sequenceNote = sequence[currentStep];
+					
+					// Get per-step velocity and mute state
+					float stepVelocity = 1.0f;
+					boolean stepMuted = false;
+					
+					if (sequenceVelocity != null && currentStep < sequenceVelocity.length) {
+						stepVelocity = sequenceVelocity[currentStep] / 100.0f;
+					}
+					if (sequenceMute != null && currentStep < sequenceMute.length) {
+						stepMuted = sequenceMute[currentStep];
+					}
+					
+					// Update current step for visual feedback (will be read by MainActivity)
+					currentSequenceStep = currentStep;
+					
+					if (sequenceNote != 0 && !stepMuted) {
 						if (mode == MODE_MONOPHONIC) {
-							internalKeyPress(1, sequencerBaseNote, 1.0f, false, true, 0);
+							internalKeyPress(1, sequencerBaseNote, stepVelocity, false, true, 0);
 						} else if (mode == MODE_CHORUS) {
-							internalKeyPress(1, sequencerBaseNote, 1.0f, false, true, -0.07f * chorusWidth);
-							internalKeyPress(2, sequencerBaseNote, 1.0f, false, true, -0.03f * chorusWidth);
-							internalKeyPress(3, sequencerBaseNote, 1.0f, false, true, +0.05f * chorusWidth);
-							internalKeyPress(4, sequencerBaseNote, 1.0f, false, true, +0.11f * chorusWidth);
+							internalKeyPress(1, sequencerBaseNote, stepVelocity, false, true, -0.07f * chorusWidth);
+							internalKeyPress(2, sequencerBaseNote, stepVelocity, false, true, -0.03f * chorusWidth);
+							internalKeyPress(3, sequencerBaseNote, stepVelocity, false, true, +0.05f * chorusWidth);
+							internalKeyPress(4, sequencerBaseNote, stepVelocity, false, true, +0.11f * chorusWidth);
 						} else {
-							internalKeyPress(internalGetVoice(sequencerBaseNote + sequenceNote - 5), sequencerBaseNote, 1.0f, false, true, 0);
+							internalKeyPress(internalGetVoice(sequencerBaseNote + sequenceNote - 5), sequencerBaseNote, stepVelocity, false, true, 0);
 						}
 					} else {
 						internalKeyRelease(1);
@@ -1341,7 +1366,7 @@ public class WaveSynth extends AbstractInstrument {
 						internalKeyRelease(3);
 						internalKeyRelease(4);
 					}
-					if (!sequenceLoop && ((int) sequenceIndex) == SEQUENCE_LENGTH - 1) {
+					if (!sequenceLoop && currentStep == SEQUENCE_LENGTH - 1) {
 						sequencerRunning = false;
 						internalKeyRelease(1);
 						internalKeyRelease(2);
