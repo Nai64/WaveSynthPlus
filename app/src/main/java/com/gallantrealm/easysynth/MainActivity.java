@@ -1760,6 +1760,206 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 		dialog.dismiss();
 	}
 });
+	
+	instrumentList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+		@Override
+		public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+			final InstrumentInfo info = instruments.get(position);
+			final String fullPath = info.category + "/" + info.name;
+			
+			// Only show options for user-saved instruments (not assets)
+			File filesDir = getFilesDir();
+			File instrumentFile = new File(filesDir, fullPath + ".wavesynth");
+			if (!instrumentFile.exists()) {
+				instrumentFile = new File(filesDir, fullPath + ".easysynth");
+			}
+			
+			final boolean isUserInstrument = instrumentFile.exists();
+			
+			// Create options array based on whether it's a user instrument
+			final String[] options = isUserInstrument ? 
+				new String[] { "Share", "Rename", "Delete", "Cancel" } :
+				new String[] { "Share", "Cancel" };
+			
+			final MessageDialog optionsDialog = new MessageDialog(MainActivity.this, 
+				"Instrument Options", 
+				"Choose an action for: " + info.name,
+				options);
+			
+			optionsDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+				@Override
+				public void onDismiss(DialogInterface d) {
+					int buttonIndex = optionsDialog.getButtonPressed();
+					if (buttonIndex >= 0 && buttonIndex < options.length) {
+						if (options[buttonIndex].equals("Share")) {
+							shareInstrument(fullPath, info);
+						} else if (options[buttonIndex].equals("Rename")) {
+							showRenameInstrumentDialog(fullPath, info, categoryMap, category, instrumentList, dialog);
+						} else if (options[buttonIndex].equals("Delete")) {
+							showDeleteInstrumentDialog(fullPath, info, categoryMap, category, instrumentList, dialog);
+						}
+					}
+				}
+			});
+			
+			optionsDialog.show();
+			return true;
+		}
+	});
+	}
+	
+	private void shareInstrument(String fullPath, InstrumentInfo info) {
+		File filesDir = getFilesDir();
+		File instrumentFile = new File(filesDir, fullPath + ".wavesynth");
+		if (!instrumentFile.exists()) {
+			instrumentFile = new File(filesDir, fullPath + ".easysynth");
+		}
+		
+		if (!instrumentFile.exists()) {
+			// Try loading from assets and sharing
+			try {
+				String assetPath = "instruments/" + fullPath;
+				java.io.InputStream is = getAssets().open(assetPath + ".wavesynth");
+				File tempFile = new File(getCacheDir(), info.name + ".wavesynth");
+				java.io.FileOutputStream fos = new java.io.FileOutputStream(tempFile);
+				byte[] buffer = new byte[1024];
+				int length;
+				while ((length = is.read(buffer)) > 0) {
+					fos.write(buffer, 0, length);
+				}
+				fos.close();
+				is.close();
+				instrumentFile = tempFile;
+			} catch (Exception e) {
+				try {
+					String assetPath = "instruments/" + fullPath;
+					java.io.InputStream is = getAssets().open(assetPath + ".easysynth");
+					File tempFile = new File(getCacheDir(), info.name + ".easysynth");
+					java.io.FileOutputStream fos = new java.io.FileOutputStream(tempFile);
+					byte[] buffer = new byte[1024];
+					int length;
+					while ((length = is.read(buffer)) > 0) {
+						fos.write(buffer, 0, length);
+					}
+					fos.close();
+					is.close();
+					instrumentFile = tempFile;
+				} catch (Exception e2) {
+					Toast.makeText(this, "Failed to share instrument", Toast.LENGTH_SHORT).show();
+					return;
+				}
+			}
+		}
+		
+		// Share the file
+		android.content.Intent shareIntent = new android.content.Intent(android.content.Intent.ACTION_SEND);
+		android.net.Uri fileUri = androidx.core.content.FileProvider.getUriForFile(
+			this, 
+			"com.gallantrealm.easysynth.fileprovider", 
+			instrumentFile
+		);
+		shareIntent.setType("application/octet-stream");
+		shareIntent.putExtra(android.content.Intent.EXTRA_STREAM, fileUri);
+		shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, info.name);
+		shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Check out this WaveSynth instrument: " + info.name);
+		shareIntent.addFlags(android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION);
+		startActivity(android.content.Intent.createChooser(shareIntent, "Share Instrument"));
+	}
+	
+	private void showRenameInstrumentDialog(final String fullPath, final InstrumentInfo info, 
+	                                         final java.util.Map<String, java.util.ArrayList<InstrumentInfo>> categoryMap,
+	                                         final String category,
+	                                         final ListView instrumentList,
+	                                         final android.app.Dialog parentDialog) {
+		final android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this, R.style.Theme_Dialog);
+		builder.setTitle("Rename Instrument");
+		
+		final android.widget.EditText input = new android.widget.EditText(this);
+		input.setText(info.name);
+		input.setSelectAllOnFocus(true);
+		builder.setView(input);
+		
+		builder.setPositiveButton("Rename", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				String newName = input.getText().toString().trim();
+				if (newName.isEmpty()) {
+					Toast.makeText(MainActivity.this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				
+				File filesDir = getFilesDir();
+				File oldFile = new File(filesDir, fullPath + ".wavesynth");
+				String extension = ".wavesynth";
+				if (!oldFile.exists()) {
+					oldFile = new File(filesDir, fullPath + ".easysynth");
+					extension = ".easysynth";
+				}
+				
+				if (oldFile.exists()) {
+					File newFile = new File(filesDir, info.category + "/" + newName + extension);
+					if (newFile.exists()) {
+						Toast.makeText(MainActivity.this, "An instrument with that name already exists", Toast.LENGTH_SHORT).show();
+						return;
+					}
+					
+					if (oldFile.renameTo(newFile)) {
+						Toast.makeText(MainActivity.this, "Instrument renamed successfully", Toast.LENGTH_SHORT).show();
+						
+						// Update the list
+						info.name = newName;
+						info.displayName = newName;
+						updateInstrumentList(categoryMap, category, instrumentList, parentDialog);
+						updateSoundSpinner();
+					} else {
+						Toast.makeText(MainActivity.this, "Failed to rename instrument", Toast.LENGTH_SHORT).show();
+					}
+				}
+			}
+		});
+		
+		builder.setNegativeButton("Cancel", null);
+		builder.show();
+	}
+	
+	private void showDeleteInstrumentDialog(final String fullPath, final InstrumentInfo info,
+	                                         final java.util.Map<String, java.util.ArrayList<InstrumentInfo>> categoryMap,
+	                                         final String category,
+	                                         final ListView instrumentList,
+	                                         final android.app.Dialog parentDialog) {
+		final MessageDialog confirmDialog = new MessageDialog(this,
+			"Delete Instrument",
+			"Are you sure you want to delete \"" + info.name + "\"? This cannot be undone.",
+			new String[] { "Delete", "Cancel" });
+		
+		confirmDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+			@Override
+			public void onDismiss(DialogInterface d) {
+				if (confirmDialog.getButtonPressed() == 0) { // Delete button
+					File filesDir = getFilesDir();
+					File instrumentFile = new File(filesDir, fullPath + ".wavesynth");
+					if (!instrumentFile.exists()) {
+						instrumentFile = new File(filesDir, fullPath + ".easysynth");
+					}
+					
+					if (instrumentFile.exists() && instrumentFile.delete()) {
+						Toast.makeText(MainActivity.this, "Instrument deleted successfully", Toast.LENGTH_SHORT).show();
+						
+						// Remove from list
+						java.util.ArrayList<InstrumentInfo> instruments = categoryMap.get(category);
+						if (instruments != null) {
+							instruments.remove(info);
+							updateInstrumentList(categoryMap, category, instrumentList, parentDialog);
+						}
+						updateSoundSpinner();
+					} else {
+						Toast.makeText(MainActivity.this, "Failed to delete instrument", Toast.LENGTH_SHORT).show();
+					}
+				}
+			}
+		});
+		
+		confirmDialog.show();
 	}
 
 	public void updateSoundSpinner() {
