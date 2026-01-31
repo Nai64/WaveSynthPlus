@@ -62,6 +62,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.core.content.FileProvider;
 
@@ -232,6 +233,18 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 	Button sequenceRateDownButton;
 	TextView sequenceRateTextView;
 	CheckBox sequenceLoopCheckBox;
+	
+	// Enhanced sequencer controls
+	TextView[] stepIndicators;
+	SeekBar[] velocitySliders;
+	ToggleButton[] muteButtons;
+	Button sequenceClearButton;
+	Button sequenceRandomizeButton;
+	Button sequencePatternButton;
+	
+	// Sequencer step indicator update
+	private android.os.Handler sequencerUpdateHandler;
+	private Runnable sequencerUpdateRunnable;
 
 	TextView recordTime;
 	Button recordStartButton;
@@ -466,6 +479,66 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 		sequenceRateUpButton = (Button) sequencerPane.findViewById(R.id.sequenceRateUpButton);
 		sequenceRateDownButton = (Button) sequencerPane.findViewById(R.id.sequenceRateDownButton);
 		sequenceLoopCheckBox = (CheckBox) sequencerPane.findViewById(R.id.sequenceLoopCheckBox);
+		
+		// Initialize enhanced sequencer controls
+		stepIndicators = new TextView[16];
+		velocitySliders = new SeekBar[16];
+		muteButtons = new ToggleButton[16];
+		
+		stepIndicators[0] = (TextView) sequencerPane.findViewById(R.id.stepIndicator1);
+		stepIndicators[1] = (TextView) sequencerPane.findViewById(R.id.stepIndicator2);
+		stepIndicators[2] = (TextView) sequencerPane.findViewById(R.id.stepIndicator3);
+		stepIndicators[3] = (TextView) sequencerPane.findViewById(R.id.stepIndicator4);
+		stepIndicators[4] = (TextView) sequencerPane.findViewById(R.id.stepIndicator5);
+		stepIndicators[5] = (TextView) sequencerPane.findViewById(R.id.stepIndicator6);
+		stepIndicators[6] = (TextView) sequencerPane.findViewById(R.id.stepIndicator7);
+		stepIndicators[7] = (TextView) sequencerPane.findViewById(R.id.stepIndicator8);
+		stepIndicators[8] = (TextView) sequencerPane.findViewById(R.id.stepIndicator9);
+		stepIndicators[9] = (TextView) sequencerPane.findViewById(R.id.stepIndicator10);
+		stepIndicators[10] = (TextView) sequencerPane.findViewById(R.id.stepIndicator11);
+		stepIndicators[11] = (TextView) sequencerPane.findViewById(R.id.stepIndicator12);
+		stepIndicators[12] = (TextView) sequencerPane.findViewById(R.id.stepIndicator13);
+		stepIndicators[13] = (TextView) sequencerPane.findViewById(R.id.stepIndicator14);
+		stepIndicators[14] = (TextView) sequencerPane.findViewById(R.id.stepIndicator15);
+		stepIndicators[15] = (TextView) sequencerPane.findViewById(R.id.stepIndicator16);
+		
+		velocitySliders[0] = (SeekBar) sequencerPane.findViewById(R.id.velocity1);
+		velocitySliders[1] = (SeekBar) sequencerPane.findViewById(R.id.velocity2);
+		velocitySliders[2] = (SeekBar) sequencerPane.findViewById(R.id.velocity3);
+		velocitySliders[3] = (SeekBar) sequencerPane.findViewById(R.id.velocity4);
+		velocitySliders[4] = (SeekBar) sequencerPane.findViewById(R.id.velocity5);
+		velocitySliders[5] = (SeekBar) sequencerPane.findViewById(R.id.velocity6);
+		velocitySliders[6] = (SeekBar) sequencerPane.findViewById(R.id.velocity7);
+		velocitySliders[7] = (SeekBar) sequencerPane.findViewById(R.id.velocity8);
+		velocitySliders[8] = (SeekBar) sequencerPane.findViewById(R.id.velocity9);
+		velocitySliders[9] = (SeekBar) sequencerPane.findViewById(R.id.velocity10);
+		velocitySliders[10] = (SeekBar) sequencerPane.findViewById(R.id.velocity11);
+		velocitySliders[11] = (SeekBar) sequencerPane.findViewById(R.id.velocity12);
+		velocitySliders[12] = (SeekBar) sequencerPane.findViewById(R.id.velocity13);
+		velocitySliders[13] = (SeekBar) sequencerPane.findViewById(R.id.velocity14);
+		velocitySliders[14] = (SeekBar) sequencerPane.findViewById(R.id.velocity15);
+		velocitySliders[15] = (SeekBar) sequencerPane.findViewById(R.id.velocity16);
+		
+		muteButtons[0] = (ToggleButton) sequencerPane.findViewById(R.id.mute1);
+		muteButtons[1] = (ToggleButton) sequencerPane.findViewById(R.id.mute2);
+		muteButtons[2] = (ToggleButton) sequencerPane.findViewById(R.id.mute3);
+		muteButtons[3] = (ToggleButton) sequencerPane.findViewById(R.id.mute4);
+		muteButtons[4] = (ToggleButton) sequencerPane.findViewById(R.id.mute5);
+		muteButtons[5] = (ToggleButton) sequencerPane.findViewById(R.id.mute6);
+		muteButtons[6] = (ToggleButton) sequencerPane.findViewById(R.id.mute7);
+		muteButtons[7] = (ToggleButton) sequencerPane.findViewById(R.id.mute8);
+		muteButtons[8] = (ToggleButton) sequencerPane.findViewById(R.id.mute9);
+		muteButtons[9] = (ToggleButton) sequencerPane.findViewById(R.id.mute10);
+		muteButtons[10] = (ToggleButton) sequencerPane.findViewById(R.id.mute11);
+		muteButtons[11] = (ToggleButton) sequencerPane.findViewById(R.id.mute12);
+		muteButtons[12] = (ToggleButton) sequencerPane.findViewById(R.id.mute13);
+		muteButtons[13] = (ToggleButton) sequencerPane.findViewById(R.id.mute14);
+		muteButtons[14] = (ToggleButton) sequencerPane.findViewById(R.id.mute15);
+		muteButtons[15] = (ToggleButton) sequencerPane.findViewById(R.id.mute16);
+		
+		sequenceClearButton = (Button) sequencerPane.findViewById(R.id.sequenceClearButton);
+		sequenceRandomizeButton = (Button) sequencerPane.findViewById(R.id.sequenceRandomizeButton);
+		sequencePatternButton = (Button) sequencerPane.findViewById(R.id.sequencePatternButton);
 
 		recordTime = (TextView) recordPane.findViewById(R.id.recordTime);
 		recordStartButton = (Button) recordPane.findViewById(R.id.recordStartButton);
@@ -1017,6 +1090,124 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 				instrument.updateParams();
 			}
 		});
+		
+		// Set up velocity slider listeners
+		for (int i = 0; i < 16; i++) {
+			final int index = i;
+			if (velocitySliders[i] != null) {
+				velocitySliders[i].setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+					@Override
+					public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+						if (fromUser && !applyingASound) {
+							if (instrument.sequenceVelocity == null) {
+								instrument.sequenceVelocity = new int[16];
+								for (int j = 0; j < 16; j++) {
+									instrument.sequenceVelocity[j] = 100;
+								}
+							}
+							instrument.sequenceVelocity[index] = progress;
+							instrument.updateParams();
+						}
+					}
+					
+					@Override
+					public void onStartTrackingTouch(SeekBar seekBar) {}
+					
+					@Override
+					public void onStopTrackingTouch(SeekBar seekBar) {}
+				});
+			}
+		}
+		
+		// Set up mute button listeners
+		for (int i = 0; i < 16; i++) {
+			final int index = i;
+			if (muteButtons[i] != null) {
+				muteButtons[i].setOnCheckedChangeListener(new OnCheckedChangeListener() {
+					@Override
+					public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+						if (!applyingASound) {
+							if (instrument.sequenceMute == null) {
+								instrument.sequenceMute = new boolean[16];
+							}
+							instrument.sequenceMute[index] = isChecked;
+							instrument.updateParams();
+						}
+					}
+				});
+			}
+		}
+		
+		// Set up utility button listeners
+		if (sequenceClearButton != null) {
+			sequenceClearButton.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					sequence1.setProgress(0);
+					sequence2.setProgress(0);
+					sequence3.setProgress(0);
+					sequence4.setProgress(0);
+					sequence5.setProgress(0);
+					sequence6.setProgress(0);
+					sequence7.setProgress(0);
+					sequence8.setProgress(0);
+					sequence9.setProgress(0);
+					sequence10.setProgress(0);
+					sequence11.setProgress(0);
+					sequence12.setProgress(0);
+					sequence13.setProgress(0);
+					sequence14.setProgress(0);
+					sequence15.setProgress(0);
+					sequence16.setProgress(0);
+					updateSequence();
+				}
+			});
+		}
+		
+		if (sequenceRandomizeButton != null) {
+			sequenceRandomizeButton.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					java.util.Random rand = new java.util.Random();
+					sequence1.setProgress(rand.nextInt(10));
+					sequence2.setProgress(rand.nextInt(10));
+					sequence3.setProgress(rand.nextInt(10));
+					sequence4.setProgress(rand.nextInt(10));
+					sequence5.setProgress(rand.nextInt(10));
+					sequence6.setProgress(rand.nextInt(10));
+					sequence7.setProgress(rand.nextInt(10));
+					sequence8.setProgress(rand.nextInt(10));
+					sequence9.setProgress(rand.nextInt(10));
+					sequence10.setProgress(rand.nextInt(10));
+					sequence11.setProgress(rand.nextInt(10));
+					sequence12.setProgress(rand.nextInt(10));
+					sequence13.setProgress(rand.nextInt(10));
+					sequence14.setProgress(rand.nextInt(10));
+					sequence15.setProgress(rand.nextInt(10));
+					sequence16.setProgress(rand.nextInt(10));
+					updateSequence();
+				}
+			});
+		}
+		
+		if (sequencePatternButton != null) {
+			sequencePatternButton.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					String currentText = sequencePatternButton.getText().toString();
+					if (currentText.contains("A")) {
+						sequencePatternButton.setText("Pattern B");
+					} else if (currentText.contains("B")) {
+						sequencePatternButton.setText("Pattern C");
+					} else if (currentText.contains("C")) {
+						sequencePatternButton.setText("Pattern D");
+					} else {
+						sequencePatternButton.setText("Pattern A");
+					}
+				}
+			});
+		}
+		
 		keyboard.setOnTouchListener(this);
 
 		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
@@ -2729,6 +2920,28 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 				// sequenceRate.setProgress((int) synth.sequenceRate);
 				sequenceRateTextView.setText(String.valueOf((int) instrument.sequenceRate));
 				sequenceLoopCheckBox.setChecked(instrument.sequenceLoop);
+				
+				// Update velocity sliders from instrument
+				for (int i = 0; i < 16; i++) {
+					if (velocitySliders[i] != null) {
+						int velocity = 100; // default
+						if (instrument.sequenceVelocity != null && i < instrument.sequenceVelocity.length) {
+							velocity = instrument.sequenceVelocity[i];
+						}
+						velocitySliders[i].setProgress(velocity);
+					}
+				}
+				
+				// Update mute buttons from instrument
+				for (int i = 0; i < 16; i++) {
+					if (muteButtons[i] != null) {
+						boolean muted = false; // default
+						if (instrument.sequenceMute != null && i < instrument.sequenceMute.length) {
+							muted = instrument.sequenceMute[i];
+						}
+						muteButtons[i].setChecked(muted);
+					}
+				}
 
 				applyingASound = false;
 			}
@@ -2794,6 +3007,23 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 		
 		// Start CPU monitoring
 		startCpuMonitoring();
+		
+		// Start sequencer step indicator updates
+		if (sequencerUpdateHandler == null) {
+			sequencerUpdateHandler = new android.os.Handler();
+		}
+		if (sequencerUpdateRunnable == null) {
+			sequencerUpdateRunnable = new Runnable() {
+				@Override
+				public void run() {
+					if (instrument != null) {
+						updateSequencerStepIndicator(instrument.currentSequenceStep);
+					}
+					sequencerUpdateHandler.postDelayed(this, 100); // Update every 100ms
+				}
+			};
+		}
+		sequencerUpdateHandler.post(sequencerUpdateRunnable);
 	}
 
 	@Override
@@ -2820,6 +3050,11 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 		
 		// Stop CPU monitoring
 		stopCpuMonitoring();
+		
+		// Stop sequencer step indicator updates
+		if (sequencerUpdateHandler != null && sequencerUpdateRunnable != null) {
+			sequencerUpdateHandler.removeCallbacks(sequencerUpdateRunnable);
+		}
 	}
 
 	int[] lastNote = new int[20]; // for finger
@@ -3553,7 +3788,49 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 		sequence[14] = sequence15.getProgress();
 		sequence[15] = sequence16.getProgress();
 		instrument.sequence = sequence;
+		
+		// Update velocity and mute arrays from UI
+		if (instrument.sequenceVelocity == null) {
+			instrument.sequenceVelocity = new int[16];
+		}
+		if (instrument.sequenceMute == null) {
+			instrument.sequenceMute = new boolean[16];
+		}
+		
+		for (int i = 0; i < 16; i++) {
+			if (velocitySliders[i] != null) {
+				instrument.sequenceVelocity[i] = velocitySliders[i].getProgress();
+			}
+			if (muteButtons[i] != null) {
+				instrument.sequenceMute[i] = muteButtons[i].isChecked();
+			}
+		}
+		
 		instrument.updateSequence();
+	}
+	
+	public void updateSequencerStepIndicator(final int currentStep) {
+		runOnUiThread(new Runnable() {
+			@Override
+			public void run() {
+				if (stepIndicators == null) {
+					return;
+				}
+				for (int i = 0; i < 16; i++) {
+					if (stepIndicators[i] != null) {
+						if (i == currentStep) {
+							// Highlight current step with green
+							stepIndicators[i].setBackgroundColor(0xFF00AA00);
+							stepIndicators[i].setTextColor(0xFFFFFFFF);
+						} else {
+							// Dim other steps
+							stepIndicators[i].setBackgroundColor(0xFF222222);
+							stepIndicators[i].setTextColor(0xFF888888);
+						}
+					}
+				}
+			}
+		});
 	}
 
 	@Override
