@@ -475,9 +475,9 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 		sequence16 = (SeekBar) sequencerPane.findViewById(R.id.sequence16);
 		// sequenceRate = (SeekBar)
 		// sequencerPane.findViewById(R.id.sequenceRate);
-		sequenceRateTextView = (TextView) sequencerPane.findViewById(R.id.sequenceRateTextView);
-		sequenceRateUpButton = (Button) sequencerPane.findViewById(R.id.sequenceRateUpButton);
-		sequenceRateDownButton = (Button) sequencerPane.findViewById(R.id.sequenceRateDownButton);
+		// sequenceRateTextView = (TextView) sequencerPane.findViewById(R.id.sequenceRateTextView);
+		// sequenceRateUpButton = (Button) sequencerPane.findViewById(R.id.sequenceRateUpButton);
+		// sequenceRateDownButton = (Button) sequencerPane.findViewById(R.id.sequenceRateDownButton);
 		sequenceLoopCheckBox = (CheckBox) sequencerPane.findViewById(R.id.sequenceLoopCheckBox);
 		
 		// Initialize enhanced sequencer controls
