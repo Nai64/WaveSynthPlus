@@ -16,6 +16,41 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    flavorDimensions "version"
+    
+    productFlavors {
+        // Full version - original with all features
+        full {
+            dimension "version"
+            applicationIdSuffix ".full"
+            versionNameSuffix "-full"
+            resValue "string", "app_variant", "Full"
+            buildConfigField "boolean", "ENABLE_BACKGROUNDS", "true"
+            buildConfigField "boolean", "LEGACY_COMPATIBILITY", "false"
+        }
+        
+        // Lite version - no background images for smaller APK
+        lite {
+            dimension "version"
+            applicationIdSuffix ".lite"
+            versionNameSuffix "-lite"
+            resValue "string", "app_variant", "Lite"
+            buildConfigField "boolean", "ENABLE_BACKGROUNDS", "false"
+            buildConfigField "boolean", "LEGACY_COMPATIBILITY", "false"
+        }
+        
+        // Legacy version - for older devices (API 21+)
+        legacy {
+            dimension "version"
+            applicationIdSuffix ".legacy"
+            versionNameSuffix "-legacy"
+            minSdk 21
+            resValue "string", "app_variant", "Legacy"
+            buildConfigField "boolean", "ENABLE_BACKGROUNDS", "true"
+            buildConfigField "boolean", "LEGACY_COMPATIBILITY", "true"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false

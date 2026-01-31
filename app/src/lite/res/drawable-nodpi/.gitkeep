@@ -1,0 +1,2 @@
+# Lite version: Replace heavy background images with simple colors
+# This directory overrides main/res/drawable-nodpi for the lite build variant
