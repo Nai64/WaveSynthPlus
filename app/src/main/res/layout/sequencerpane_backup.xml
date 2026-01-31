@@ -115,7 +115,7 @@
 						android:text="16" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
 						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
 					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="Rate" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
+						android:text="Rateeeee44444e" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="13sp"
 						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
 				</TableRow>
 			</TableLayout>

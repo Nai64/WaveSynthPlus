@@ -53,58 +53,57 @@
 				</TableRow>
 				
 				<!-- Note sliders row -->
-				<TableRow android:id="@+id/TableRow17" android:layout_width="wrap_content" android:layout_height="wrap_content"
-					android:layout_weight="1">
+				<TableRow android:id="@+id/TableRow17" android:layout_width="wrap_content" android:layout_height="200dp">
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence1"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence2"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence3"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence4"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence5"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence6"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence7"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence8"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence9"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence10"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence11"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence12"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence13"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence14"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence15"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence16"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:max="9"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:max="9"
 						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
 					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequenceRate"
-						android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="10dp"
+						android:layout_width="wrap_content" android:layout_height="200dp" android:layout_marginLeft="10dp"
 						android:layout_marginRight="10dp" android:max="100" android:progressDrawable="@drawable/progress_horizontal"
 						android:thumb="@drawable/seek_thumb" />
 				</TableRow>
