@@ -27,183 +27,178 @@
 	<HorizontalScrollView android:id="@+id/horizontalScrollView2" android:layout_width="match_parent"
 		android:layout_height="0dp" android:layout_weight="1">
 		<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
-			android:orientation="horizontal">
-			<TableLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
-				android:layout_marginLeft="5dp" android:layout_marginRight="5dp" android:layout_weight="1">
-				
-				<!-- Step indicators row -->
-				<TableRow android:id="@+id/TableRow18" android:layout_width="wrap_content" android:layout_height="wrap_content">
-					<TextView android:id="@+id/stepIndicator1" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator2" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator3" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator4" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator5" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator6" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator7" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator8" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator9" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator10" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator11" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator12" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator13" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator14" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator15" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:layout_marginEnd="1dp" android:text="•"/>
-					<TextView android:id="@+id/stepIndicator16" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
-					<TextView android:layout_width="wrap_content" android:layout_height="18dp"/>
-				</TableRow>
-				
-				<!-- Note sliders row -->
-				<TableRow android:id="@+id/TableRow17" android:layout_width="wrap_content" android:layout_height="150dp">
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence1"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence2"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence3"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence4"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence5"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence6"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence7"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence8"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence9"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence10"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence11"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence12"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence13"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence14"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence15"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence16"
-						android:layout_width="wrap_content" android:layout_height="150dp" android:max="9"
-						android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb" />
-					<com.gallantrealm.android.VerticalSlider android:id="@+id/sequenceRate"
-						android:layout_width="wrap_content" android:layout_height="200dp" android:layout_marginLeft="10dp"
-						android:layout_marginRight="10dp" android:max="100" android:progressDrawable="@drawable/progress_horizontal"
-						android:thumb="@drawable/seek_thumb" />
-				</TableRow>
-				
-				<!-- Velocity sliders row (smaller) -->
-				<TableRow android:id="@+id/TableRow19" android:layout_width="wrap_content" android:layout_height="40dp">
-					<SeekBar android:id="@+id/velocity1" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity2" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity3" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity4" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity5" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity6" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity7" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity8" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity9" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity10" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity11" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity12" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity13" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity14" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity15" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-					<SeekBar android:id="@+id/velocity16" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
-				</TableRow>
-				
-				<!-- Mute buttons row -->
-				<TableRow android:id="@+id/TableRow20" android:layout_width="wrap_content" android:layout_height="wrap_content">
-					<ToggleButton android:id="@+id/mute1" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute2" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute3" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute4" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute5" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute6" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute7" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute8" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute9" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute10" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute11" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute12" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute13" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute14" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute15" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-					<ToggleButton android:id="@+id/mute16" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="12sp"/>
-				</TableRow>
-				
-				<!-- Step numbers row -->
-				<TableRow android:id="@+id/TableRow16" android:layout_width="wrap_content" android:layout_height="wrap_content">
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="1" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="2" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="3" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="4" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="5" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="6" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="7" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal|center_vertical"
-						android:text="8" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="9" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="10" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="11" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="12" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="13" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="14" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="15" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal|center_vertical"
-						android:text="16" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-					<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
-						android:text="Rate" android:textAppearance="?android:attr/textAppearanceMedium" android:textSize="11sp"
-						android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1" />
-				</TableRow>
-			</TableLayout>
+			android:orientation="horizontal" android:padding="5dp">
+			
+			<!-- Step 1 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator1" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence1" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity1" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute1" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 2 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator2" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence2" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity2" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute2" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 3 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator3" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence3" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity3" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute3" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 4 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator4" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence4" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity4" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute4" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 5 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator5" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence5" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity5" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute5" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="5" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 6 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator6" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence6" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity6" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute6" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="6" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 7 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator7" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence7" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity7" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute7" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="7" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 8 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator8" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence8" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity8" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute8" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="8" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 9 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator9" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence9" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity9" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute9" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="9" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 10 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator10" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence10" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity10" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute10" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 11 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator11" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence11" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity11" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute11" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="11" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 12 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator12" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence12" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity12" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute12" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 13 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator13" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence13" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity13" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute13" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="13" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 14 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator14" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence14" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity14" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute14" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="14" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 15 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="2dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator15" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence15" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity15" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute15" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="15" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Step 16 Column -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:layout_marginEnd="8dp" android:gravity="center_horizontal">
+				<TextView android:id="@+id/stepIndicator16" android:layout_width="32dp" android:layout_height="14dp" android:gravity="center" android:textColor="#888888" android:text="•"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequence16" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="9" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<SeekBar android:id="@+id/velocity16" android:layout_width="32dp" android:layout_height="40dp" android:max="100" android:progress="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<ToggleButton android:id="@+id/mute16" android:layout_width="32dp" android:layout_height="24dp" android:textOn="M" android:textOff="" android:textSize="10sp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="16" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
+			<!-- Rate Column (optional) -->
+			<LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
+				android:orientation="vertical" android:gravity="center_horizontal">
+				<TextView android:layout_width="wrap_content" android:layout_height="14dp"/>
+				<com.gallantrealm.android.VerticalSlider android:id="@+id/sequenceRate" android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1" android:max="100" android:progressDrawable="@drawable/progress_horizontal" android:thumb="@drawable/seek_thumb"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="40dp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="24dp"/>
+				<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Rate" android:textSize="11sp" android:shadowColor="#80000000" android:shadowDx="2" android:shadowDy="2" android:shadowRadius="1"/>
+			</LinearLayout>
+			
 		</LinearLayout>
 	</HorizontalScrollView>
 </LinearLayout>
-
