@@ -1081,8 +1081,8 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 		sequence15.setOnSeekBarChangeListener(this);
 		sequence16.setOnSeekBarChangeListener(this);
 		// sequenceRate.setOnSeekBarChangeListener(this);
-		sequenceRateUpButton.setOnTouchListener(this);
-		sequenceRateDownButton.setOnTouchListener(this);
+		// sequenceRateUpButton.setOnTouchListener(this);
+		// sequenceRateDownButton.setOnTouchListener(this);
 		sequenceLoopCheckBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -2918,7 +2918,7 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 					sequence16.setProgress(0);
 				}
 				// sequenceRate.setProgress((int) synth.sequenceRate);
-				sequenceRateTextView.setText(String.valueOf((int) instrument.sequenceRate));
+				// sequenceRateTextView.setText(String.valueOf((int) instrument.sequenceRate));
 				sequenceLoopCheckBox.setChecked(instrument.sequenceLoop);
 				
 				// Update velocity sliders from instrument
