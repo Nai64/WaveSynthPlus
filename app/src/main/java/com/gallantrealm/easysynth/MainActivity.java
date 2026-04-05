@@ -1648,7 +1648,7 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 		dialog.setContentView(R.layout.instrument_category_dialog);
 		dialog.setTitle("Choose Instrument");
 		dialog.setCanceledOnTouchOutside(true);
-		
+
 		// Make dialog wider
 		if (dialog.getWindow() != null) {
 			android.view.WindowManager.LayoutParams lp = new android.view.WindowManager.LayoutParams();
@@ -1656,6 +1656,8 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 			lp.width = (int)(getResources().getDisplayMetrics().widthPixels * 0.85);
 			lp.height = (int)(getResources().getDisplayMetrics().heightPixels * 0.75);
 			dialog.getWindow().setAttributes(lp);
+			// Set transparent background to prevent default dialog background from showing
+			dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 		}
 		
 		final LinearLayout categoryContainer = dialog.findViewById(R.id.categoryButtonsContainer);
