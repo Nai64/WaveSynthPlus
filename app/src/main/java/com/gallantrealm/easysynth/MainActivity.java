@@ -157,6 +157,7 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 	SeekBar harmonic30;
 	SeekBar harmonic31;
 	SeekBar harmonic32;
+	Button harmonicsRandomizeButton;
 
 	Spinner filterTypeSpinner;
 	SeekBar filterResonance;
@@ -233,6 +234,10 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 	Button sequenceRateDownButton;
 	TextView sequenceRateTextView;
 	CheckBox sequenceLoopCheckBox;
+	Button bpmHalfButton;
+	Button bpmDoubleButton;
+	CheckBox unlimitedBpmCheckBox;
+	com.gallantrealm.android.VerticalSlider sequenceRateSlider;
 	
 	// Enhanced sequencer controls
 	TextView[] stepIndicators;
@@ -399,6 +404,7 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 		harmonic30 = (SeekBar) harmonicsPane.findViewById(R.id.harmonic30);
 		harmonic31 = (SeekBar) harmonicsPane.findViewById(R.id.harmonic31);
 		harmonic32 = (SeekBar) harmonicsPane.findViewById(R.id.harmonic32);
+		harmonicsRandomizeButton = (Button) harmonicsPane.findViewById(R.id.harmonicsRandomizeButton);
 
 		filterTypeSpinner = (Spinner) filterPane.findViewById(R.id.filterTypeSpinner);
 		filterResonance = (SeekBar) filterPane.findViewById(R.id.filterResonance);
@@ -539,6 +545,10 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 		sequenceClearButton = (Button) sequencerPane.findViewById(R.id.sequenceClearButton);
 		sequenceRandomizeButton = (Button) sequencerPane.findViewById(R.id.sequenceRandomizeButton);
 		sequencePatternButton = (Button) sequencerPane.findViewById(R.id.sequencePatternButton);
+		bpmHalfButton = (Button) sequencerPane.findViewById(R.id.bpmHalfButton);
+		bpmDoubleButton = (Button) sequencerPane.findViewById(R.id.bpmDoubleButton);
+		unlimitedBpmCheckBox = (CheckBox) sequencerPane.findViewById(R.id.unlimitedBpmCheckBox);
+		sequenceRateSlider = (com.gallantrealm.android.VerticalSlider) sequencerPane.findViewById(R.id.sequenceRate);
 
 		recordTime = (TextView) recordPane.findViewById(R.id.recordTime);
 		recordStartButton = (Button) recordPane.findViewById(R.id.recordStartButton);
@@ -1090,6 +1100,23 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 				instrument.updateParams();
 			}
 		});
+
+		// Sequence rate slider listener
+		if (sequenceRateSlider != null) {
+			sequenceRateSlider.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+				@Override
+				public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+					if (fromUser) {
+						instrument.sequenceRate = progress;
+						instrument.updateParams();
+					}
+				}
+				@Override
+				public void onStartTrackingTouch(SeekBar seekBar) {}
+				@Override
+				public void onStopTrackingTouch(SeekBar seekBar) {}
+			});
+		}
 		
 		// Set up velocity slider listeners
 		for (int i = 0; i < 16; i++) {
@@ -1189,6 +1216,48 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 				}
 			});
 		}
+
+		if (harmonicsRandomizeButton != null) {
+			harmonicsRandomizeButton.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					java.util.Random rand = new java.util.Random();
+					harmonic1.setProgress(rand.nextInt(101));
+					harmonic2.setProgress(rand.nextInt(101));
+					harmonic3.setProgress(rand.nextInt(101));
+					harmonic4.setProgress(rand.nextInt(101));
+					harmonic5.setProgress(rand.nextInt(101));
+					harmonic6.setProgress(rand.nextInt(101));
+					harmonic7.setProgress(rand.nextInt(101));
+					harmonic8.setProgress(rand.nextInt(101));
+					harmonic9.setProgress(rand.nextInt(101));
+					harmonic10.setProgress(rand.nextInt(101));
+					harmonic11.setProgress(rand.nextInt(101));
+					harmonic12.setProgress(rand.nextInt(101));
+					harmonic13.setProgress(rand.nextInt(101));
+					harmonic14.setProgress(rand.nextInt(101));
+					harmonic15.setProgress(rand.nextInt(101));
+					harmonic16.setProgress(rand.nextInt(101));
+					harmonic17.setProgress(rand.nextInt(101));
+					harmonic18.setProgress(rand.nextInt(101));
+					harmonic19.setProgress(rand.nextInt(101));
+					harmonic20.setProgress(rand.nextInt(101));
+					harmonic21.setProgress(rand.nextInt(101));
+					harmonic22.setProgress(rand.nextInt(101));
+					harmonic23.setProgress(rand.nextInt(101));
+					harmonic24.setProgress(rand.nextInt(101));
+					harmonic25.setProgress(rand.nextInt(101));
+					harmonic26.setProgress(rand.nextInt(101));
+					harmonic27.setProgress(rand.nextInt(101));
+					harmonic28.setProgress(rand.nextInt(101));
+					harmonic29.setProgress(rand.nextInt(101));
+					harmonic30.setProgress(rand.nextInt(101));
+					harmonic31.setProgress(rand.nextInt(101));
+					harmonic32.setProgress(rand.nextInt(101));
+					updateWaves();
+				}
+			});
+		}
 		
 		if (sequencePatternButton != null) {
 			sequencePatternButton.setOnClickListener(new View.OnClickListener() {
@@ -1204,6 +1273,42 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 					} else {
 						sequencePatternButton.setText("Pattern A");
 					}
+				}
+			});
+		}
+
+		// BPM x2 and /2 buttons
+		if (bpmHalfButton != null) {
+			bpmHalfButton.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					int maxVal = (unlimitedBpmCheckBox != null && unlimitedBpmCheckBox.isChecked()) ? 10000 : 1000;
+					instrument.sequenceRate = Math.max(0, instrument.sequenceRate / 2);
+					instrument.updateParams();
+					updateControls();
+				}
+			});
+		}
+
+		if (bpmDoubleButton != null) {
+			bpmDoubleButton.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					int maxVal = (unlimitedBpmCheckBox != null && unlimitedBpmCheckBox.isChecked()) ? 10000 : 1000;
+					instrument.sequenceRate = Math.min(maxVal, instrument.sequenceRate * 2);
+					instrument.updateParams();
+					updateControls();
+				}
+			});
+		}
+
+		// Unlimited BPM checkbox - saves/loads from instrument
+		if (unlimitedBpmCheckBox != null) {
+			unlimitedBpmCheckBox.setOnCheckedChangeListener(new android.widget.CompoundButton.OnCheckedChangeListener() {
+				@Override
+				public void onCheckedChanged(android.widget.CompoundButton buttonView, boolean isChecked) {
+					instrument.bpmSequenceRate = isChecked;
+					updateControls();
 				}
 			});
 		}
@@ -2922,6 +3027,22 @@ public class MainActivity extends Activity implements OnTouchListener, OnSeekBar
 				// sequenceRate.setProgress((int) synth.sequenceRate);
 				// sequenceRateTextView.setText(String.valueOf((int) instrument.sequenceRate));
 				sequenceLoopCheckBox.setChecked(instrument.sequenceLoop);
+
+				// Update sequenceRate slider and unlimited BPM checkbox
+				if (unlimitedBpmCheckBox != null) {
+					unlimitedBpmCheckBox.setChecked(instrument.bpmSequenceRate);
+				}
+				if (sequenceRateSlider != null) {
+					if (instrument.bpmSequenceRate) {
+						// Unlimited mode: allow up to 10000
+						sequenceRateSlider.setMax(10000);
+						sequenceRateSlider.setProgress((int) instrument.sequenceRate);
+					} else {
+						// Normal mode: allow up to 1000
+						sequenceRateSlider.setMax(1000);
+						sequenceRateSlider.setProgress(Math.min(1000, (int) instrument.sequenceRate));
+					}
+				}
 				
 				// Update velocity sliders from instrument
 				for (int i = 0; i < 16; i++) {

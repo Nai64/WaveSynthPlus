@@ -135,6 +135,7 @@ public class WaveSynth extends AbstractInstrument {
 	protected int currentSequenceStep = -1;
 	protected float sequenceRate;
 	protected boolean sequenceLoop;
+	protected boolean bpmSequenceRate;
 	protected int sequencerBaseNote;
 
 	public static final int EXPRESSION_NONE = 0;
